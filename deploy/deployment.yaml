@@ -1,0 +1,67 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: kubernetes-backend
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: kubernetes-backend
+    spec:
+      containers:
+      - name: kubernetes-backend
+        image: cicenter.azurecr.io/kubernetesbackendapi:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8081
+      imagePullSecrets:
+      - name: acr-auth
+
+---
+
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: kubernetes-frontend
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: kubernetes-frontend
+    spec:
+      containers:
+      - name: kubernetes-frontend
+        image: cicenter.azurecr.io/kubernetesfrontend:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+      - name: acr-auth
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubernetes-ui
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 8080
+  selector:
+    app: kubernetes-frontend
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubernetes-bl
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 8081
+  selector:
+    app: kubernetes-backend
