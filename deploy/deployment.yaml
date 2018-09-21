@@ -12,9 +12,12 @@ spec:
       containers:
       - name: codegen
         image: cicenter.azurecr.io/codegencore:$(Build.BuildNumber)
+        env:
+        - name: ASPNETCORE_ENVIRONMENT
+          value: "Production"
         imagePullPolicy: Always
         ports:
-        - containerPort: 52677
+        - containerPort: 5001
       imagePullSecrets:
       - name: acr-auth
 ---
