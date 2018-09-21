@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeGen.AKS", "src\CodeGen.AKS\CodeGen.AKS.csproj", "{7EF607D2-0D8E-430B-8F09-D32F30142E5C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeGen.Function", "src\CodeGen.Function\CodeGen.Function.csproj", "{D1E95A20-0CEE-4375-9F3E-8840A9915744}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{7EF607D2-0D8E-430B-8F09-D32F30142E5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EF607D2-0D8E-430B-8F09-D32F30142E5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EF607D2-0D8E-430B-8F09-D32F30142E5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1E95A20-0CEE-4375-9F3E-8840A9915744}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1E95A20-0CEE-4375-9F3E-8840A9915744}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1E95A20-0CEE-4375-9F3E-8840A9915744}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1E95A20-0CEE-4375-9F3E-8840A9915744}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
