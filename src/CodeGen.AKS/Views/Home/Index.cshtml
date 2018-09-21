@@ -3,14 +3,14 @@
 }
 
 <script type="text/javascript">
-    $(document).load(function () {
+    $(function () {
         CodeGen.Kubernetes.Index.onLoad();
     });
 </script>
 
 <main role="main" class="container">
     <h1 class="mt-5">Kubernetes orchestrator</h1>
-    <p class="lead">Choose a language from the dropdown below, write some code on the text box and have it running on a K8s pod.</p>
+    <p class="lead">Fire some PODs inside AKS by simple filling the form below</p>
 
     <div id="okMessage" class="alert alert-success d-none" role="alert">POD Deployed succesfully!</div>
     <div id="koMessage" class="alert alert-danger d-none" role="alert">There was an error deploying the POD, check the console for more info</div>
@@ -18,11 +18,11 @@
     <form>
         <div class="form-group">
             <label for="imageName">Image name</label>
-            <input type="text" class="form-control" id="imageName" placeholder="ruby:latest">
+            <input type="text" class="form-control" id="imageName" placeholder="giancarlolelli/ruby:primes">
         </div>
         <div class="form-group">
             <label for="podName">POD name</label>
-            <input type="text" class="form-control" id="podName" placeholder="myRuby-POD">
+            <input type="text" class="form-control" id="podName" placeholder="sample">
         </div>
         <div class="form-group">
             <label for="ns">Namespace</label>
@@ -38,7 +38,7 @@
         </div>
         <div class="form-group">
             <label for="cmd">Command arguments</label>
-            <textarea class="form-control" id="cmd" rows="3" cols="10"></textarea>
+            <textarea class="form-control" id="cmd" rows="3" cols="10" placeholder="primes.rb"></textarea>
         </div>
         <button type="button" id="deployButton" class="btn btn-primary mb-2">Deploy</button>
     </form>

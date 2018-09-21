@@ -5,7 +5,7 @@ CodeGen.Kubernetes.Index = new function () {
     var _self = this;
 
     _self.clusterSettings = {
-        deployUrl: '/api/Kube/Pod'
+        deployUrl: '/api/AKS/Pod'
     };
 
     _self.onLoad = function () {
@@ -25,8 +25,8 @@ CodeGen.Kubernetes.Index = new function () {
             name: $('#podName').val(),
             cmd: $('#command').val(),
             ns: $('#ns').val(),
-            args: $('#cmd').val(),
-            count: $('#count').val()
+            args: $('#cmd').val()
+            //,count: $('#count').val()
         };
 
         $.ajax({

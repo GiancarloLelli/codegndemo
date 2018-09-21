@@ -8,7 +8,7 @@ CodeGen.Kubernetes.Plot = new function () {
     _self.date = [];
 
     _self.clusterSettings = {
-        metricsUrl: '/api/Kube/ExternalMetrics'
+        metricsUrl: '/api/AKS/ExternalMetrics'
     };
 
     _self.onLoad = function () {
