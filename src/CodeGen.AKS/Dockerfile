@@ -5,11 +5,11 @@ EXPOSE 44324
 
 FROM microsoft/dotnet:2.1-sdk AS build
 WORKDIR /src
-RUN ls -l
 COPY ["CodeGen.AKS.csproj", "src/CodeGen.AKS/"]
 RUN dotnet restore "src/CodeGen.AKS/CodeGen.AKS.csproj"
 COPY . .
 WORKDIR "src/CodeGen.AKS"
+RUN ls -l
 RUN dotnet build "CodeGen.AKS.csproj" -c Release -o /app
 
 FROM build AS publish
