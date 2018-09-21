@@ -1,16 +1,16 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: codegen-core
+  name: codegen
 spec:
   replicas: 3
   template:
     metadata:
       labels:
-        app: codegen-core
+        app: codegen
     spec:
       containers:
-      - name: codegen-core
+      - name: codegen-app
         image: cicenter.azurecr.io/codegencore:$(Build.BuildNumber)
         imagePullPolicy: Always
         ports:
@@ -21,10 +21,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: codegen-core
+  name: codegen
 spec:
   type: LoadBalancer
   ports:
   - port: 8080
   selector:
-    app: codegen-core
+    app: codegen
