@@ -15,12 +15,12 @@ namespace CodeGen.Function
         [FunctionName("AKSScaler")]
         public static void Run([TimerTrigger("0 */5 * * * *")]TimerInfo myTimer, ILogger log)
         {
-            var clientSecret = "Open@Shift1";
-            var token = "80b9f59be248ffbb1bce97201c1c705d";
-            var clientId = "31ddab0f-8377-48c8-b996-87e38bc00846";
-            var tenantId = "5260bcfe-56e3-4379-8d89-b18cd76213aa";
-            var clusterId = "/subscriptions/8f03dbc7-726d-4567-9479-925323a02f45/resourcegroups/LcRsrGrp/providers/Microsoft.ContainerService/managedClusters/acic-k8s";
-            var url = "https://acic-k8s-92d90c3d.hcp.westeurope.azmk8s.io:443/api/v1/namespaces/kube-system/services/http:heapster:/proxy/apis/metrics/v1alpha1/nodes?labelSelector=";
+            var tenantId = "1dc1085b-9aa9-42dc-bedd-4c7dcfe4570e";
+            var clientSecret = "Code@Gen2018";
+            var clientId = "c56cd20f-df34-4ab6-8c3d-bc90547d2838";
+            var clusterId = "/subscriptions/f6fec764-fbe4-42a9-8f27-93cfe2f839cd/resourcegroups/CodeGen2018/providers/Microsoft.ContainerService/managedClusters/CodeGen";
+            var url = "https://codegenaks-31b27eec.hcp.northeurope.azmk8s.io:443/api/v1/namespaces/kube-system/services/http:heapster:/proxy/apis/metrics/v1alpha1/nodes?labelSelector=";
+            var token = "701c47b9b820885ffa01f2727829d57a";
 
             double averageUsage;
             var handler = new HttpClientHandler { ServerCertificateCustomValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true };
