@@ -17,7 +17,7 @@ spec:
           value: "Production"
         imagePullPolicy: Always
         ports:
-        - containerPort: 5001
+        - containerPort: 80
       imagePullSecrets:
       - name: acr-auth
 ---
@@ -28,6 +28,6 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-  - port: 52677
+  - port: 80
   selector:
     app: codegen
