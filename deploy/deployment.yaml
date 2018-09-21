@@ -10,7 +10,7 @@ spec:
         app: codegen
     spec:
       containers:
-      - name: codegen-app
+      - name: codegen
         image: cicenter.azurecr.io/codegencore:$(Build.BuildNumber)
         imagePullPolicy: Always
         ports:
@@ -21,10 +21,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: codegen
+  name: codegen-svc
 spec:
   type: LoadBalancer
   ports:
-  - port: 8080
+  - port: 52677
   selector:
     app: codegen
