@@ -7,13 +7,13 @@ FROM microsoft/dotnet:2.1-sdk AS build
 WORKDIR /src
 COPY ["src/CodeGen.AKS/CodeGen.AKS.csproj", "src/CodeGen.AKS/"]
 RUN dotnet restore "src/CodeGen.AKS/CodeGen.AKS.csproj"
-COPY . "src/CodeGen.AKS/"
+COPY . .
 WORKDIR "src/CodeGen.AKS"
 RUN ls -l
-RUN dotnet build "CodeGen.AKS.csproj" -c Release -o /app
+RUN dotnet build "src/CodeGen.AKS/CodeGen.AKS.csproj" -c Release -o /app
 
 FROM build AS publish
-RUN dotnet publish "CodeGen.AKS.csproj" -c Release -o /app
+RUN dotnet publish "src/CodeGen.AKS/CodeGen.AKS.csproj" -c Release -o /app
 
 FROM base AS final
 WORKDIR /app
