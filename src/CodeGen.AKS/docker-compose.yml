@@ -1,9 +1,0 @@
-version: '3.4'
-
-services:
-
-  codegen.core:
-    image: cicenter.azurecr.io/codegencore:${TAG}
-    build:
-      context: .
-      dockerfile: Dockerfile

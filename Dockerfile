@@ -18,6 +18,4 @@ RUN dotnet publish "CodeGen.AKS.csproj" -c Release -o /app
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app .
-ENTRYPOINT ["dotnet", "CodeGen.AKS.dll"]
-
-COPY 
+ENTRYPOINT ["dotnet", "CodeGen.AKS.dll"] 
