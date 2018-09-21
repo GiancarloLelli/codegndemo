@@ -9,7 +9,7 @@ RUN ls -l
 COPY ["CodeGen.AKS.csproj", "src/CodeGen.AKS/"]
 RUN dotnet restore "src/CodeGen.AKS/CodeGen.AKS.csproj"
 COPY . .
-WORKDIR "src/src/CodeGen.AKS"
+WORKDIR "src/CodeGen.AKS"
 RUN dotnet build "CodeGen.AKS.csproj" -c Release -o /app
 
 FROM build AS publish
