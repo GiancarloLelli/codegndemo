@@ -25,8 +25,8 @@ CodeGen.Kubernetes.Index = new function () {
             name: $('#podName').val(),
             cmd: $('#command').val(),
             ns: $('#ns').val(),
-            args: $('#cmd').val()
-            //,count: $('#count').val()
+            args: $('#cmd').val(),
+            count: $('#count').val()
         };
 
         $.ajax({
